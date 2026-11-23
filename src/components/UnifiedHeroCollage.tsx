@@ -6,7 +6,7 @@ import { EditorialStatement } from './EditorialStatement';
 import { IMAGE_CREDIT_REFERENCE, imageAssets, videoAssets } from '../config/imageAssets';
 import { computePinnedProgress } from '../animations/scrollProgress';
 import { computeUnifiedHeroCollage } from '../animations/parallaxTimeline';
-import type { AppRoute } from '../utils/becaHelpers';
+import { resolveAssetUrl, type AppRoute } from '../utils/becaHelpers';
 
 export interface UnifiedHeroCollageProps {
   onNavigate: (route: AppRoute, hash?: string) => void;
@@ -214,9 +214,12 @@ export const UnifiedHeroCollage: React.FC<UnifiedHeroCollageProps> = ({ onNaviga
           style={{ opacity: 0, transform: 'translate3d(0, 8vh, 0)' }}
           className="absolute inset-0 z-[1] flex items-center justify-center pointer-events-none select-none px-6 text-center will-change-[transform,opacity]"
         >
-          <p className="font-display font-normal text-[#111111] text-[clamp(48px,8.4vw,122px)] leading-[0.94] tracking-[-0.045em] max-w-[14ch]">
-            Becas Butiá
-          </p>
+          <img
+            src={resolveAssetUrl('/assets/brand/logo-butia.svg')}
+            alt="Becas Butiá"
+            draggable={false}
+            className="w-[min(80vw,560px)] md:w-[min(64vw,680px)] h-auto block"
+          />
         </div>
 
         {/* LAYER Z-2: Floating Portrait A — Upper Left (3:4) */}

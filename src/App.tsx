@@ -9,7 +9,7 @@ import { RequisitosPage } from './pages/RequisitosPage';
 import { buildAppUrl, normalizeAppRoute, type AppRoute } from './utils/becaHelpers';
 
 const PAGE_TITLES: Record<AppRoute, string> = {
-  '/': 'Home | Becas',
+  '/': 'Bienvenida | Becas Butiá',
   '/conoce-la-beca': 'Acerca de la beca | Becas',
   '/como-postularte': 'Cómo postularte | Becas',
   '/requisitos': 'Requisitos | Becas',
