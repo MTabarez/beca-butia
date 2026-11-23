@@ -215,7 +215,7 @@ export const UnifiedHeroCollage: React.FC<UnifiedHeroCollageProps> = ({ onNaviga
           className="absolute inset-0 z-[1] flex items-center justify-center pointer-events-none select-none px-6 text-center will-change-[transform,opacity]"
         >
           <p className="font-display font-normal text-[#111111] text-[clamp(48px,8.4vw,122px)] leading-[0.94] tracking-[-0.045em] max-w-[14ch]">
-            Conocé el programa
+            Becas Butiá
           </p>
         </div>
 
