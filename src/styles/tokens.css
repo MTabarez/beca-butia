@@ -1,0 +1,85 @@
+/* ==========================================================================
+   BECAS BUTIÁ — COMPLETE DESIGN REVISION: CENTRALIZED UI KIT TOKENS
+   Restrained neutral editorial palette (#E4E4E0 / #FFFFFF / #111111)
+   paired with exact sampled Becas Butiá brand accents.
+   ========================================================================== */
+
+:root {
+  /* Actual Becas Butiá Brand Colors (sampled from official logo) */
+  --color-butia-cyan: #009FE3;
+  --color-butia-magenta: #E6007E;
+  --color-butia-yellow: #FBBA06;
+  --color-butia-navy: #392665;
+  --color-butia-green: #007405;
+
+  /* Restrained Neutral Palette (dominant across the interface) */
+  --color-page: #E4E4E0;
+  --color-surface: #FFFFFF;
+  --color-neutral-100: #FFFFFF;
+  --color-neutral-200: #EDEDED;
+  --color-neutral-300: #D8D8D8;
+  --color-neutral-900: #111111;
+
+  /* Functional Text & Hairlines */
+  --color-text-primary: #111111;
+  --color-text-secondary: #454545;
+  --color-border-subtle: rgba(17, 17, 17, 0.12);
+  --color-border-light: rgba(255, 255, 255, 0.24);
+
+  /* Typography Families (Section 4) */
+  --font-display: "Space Grotesk", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-body: "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+
+  /* Fluid Typography Scale (Section 4 Hierarchy) */
+  --font-display-xl: clamp(40px, 8.6vw, 132px);
+  --font-display-lg: clamp(42px, 7.2vw, 112px);
+  --font-h1: clamp(38px, 4.6vw, 64px);
+  --font-h2: clamp(30px, 3.5vw, 48px);
+  --font-h3: clamp(24px, 2.3vw, 32px);
+  --font-h4: clamp(20px, 1.7vw, 24px);
+  --font-body-lg: clamp(18px, 1.35vw, 20px);
+  --font-body-base: clamp(16px, 1.1vw, 17px);
+  --font-body-sm: clamp(13px, 0.95vw, 14px);
+  --font-nav: 15px;
+  --font-button: 15px;
+  --font-caption: 13px;
+
+  /* 4px-Based Spacing Scale (Section 15) */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-20: 80px;
+  --space-24: 96px;
+  --space-32: 128px;
+
+  /* Border Radius Tokens (Section 15) */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-card: 24px;
+  --radius-xl: 28px;
+  --radius-panel-sm: 36px;
+  --radius-panel: 44px;
+  --radius-panel-lg: 52px;
+  --radius-pill: 999px;
+
+  /* Overlap Elevation Shadow (flat chromatic contrast — zero shadow) */
+  --shadow-panel-overlap: none;
+
+  /* Layout Dimensions */
+  --container-max: 1440px;
+  --gutter-mobile: 20px;
+  --gutter-tablet: 28px;
+  --gutter-desktop: 42px;
+
+  /* Motion Curves */
+  --ease-editorial: cubic-bezier(0.22, 1, 0.36, 1);
+  --duration-btn: 320ms;
+  --duration-card: 500ms;
+}

@@ -1,0 +1,6 @@
+{
+  "name": "Becas Butiá — Uruguay",
+  "description": "Sitio institucional rediseñado de las Becas Butiá (ANEP, MEC, Ceibal, BROU, BPS, MIDES e INJU) para acompañar las trayectorias educativas en educación media pública de Uruguay.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,392 @@
+/* ==========================================================================
+   BECAS BUTIÁ — REVISED UI KIT & EXACT REFERENCE INTERACTIONS
+   ========================================================================== */
+
+/* 1. Pill Buttons (Section 15: Near-black primary, bordered secondary, animated arrow) */
+.butia-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 46px;
+  padding: 0 22px;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: var(--font-button);
+  line-height: 1;
+  white-space: nowrap;
+  flex-shrink: 0;
+  cursor: pointer;
+  transition:
+    background-color var(--duration-btn) var(--ease-editorial),
+    color var(--duration-btn) var(--ease-editorial),
+    border-color var(--duration-btn) var(--ease-editorial),
+    transform 220ms var(--ease-editorial);
+}
+
+.butia-btn--sm {
+  min-height: 38px;
+  padding: 0 16px;
+  font-size: 13.5px;
+}
+
+.butia-btn--primary {
+  background-color: var(--color-text-primary);
+  color: var(--color-neutral-100);
+  border: 1px solid var(--color-text-primary);
+}
+
+.butia-btn--primary:hover {
+  background-color: #292929;
+  border-color: #292929;
+  color: var(--color-neutral-100);
+}
+
+.butia-btn--secondary {
+  background-color: transparent;
+  color: var(--color-text-primary);
+  border: 1px solid rgba(17, 17, 17, 0.35);
+}
+
+.butia-btn--secondary:hover {
+  background-color: var(--color-text-primary);
+  border-color: var(--color-text-primary);
+  color: var(--color-neutral-100);
+}
+
+.butia-btn--secondary-light {
+  background-color: transparent;
+  color: var(--color-neutral-100);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+.butia-btn--secondary-light:hover {
+  background-color: var(--color-neutral-100);
+  color: var(--color-text-primary);
+  border-color: var(--color-neutral-100);
+}
+
+.butia-btn--cyan {
+  background-color: var(--color-butia-cyan);
+  color: var(--color-neutral-100);
+  border: 1px solid var(--color-butia-cyan);
+}
+
+.butia-btn--cyan:hover {
+  background-color: var(--color-text-primary);
+  border-color: var(--color-text-primary);
+  color: var(--color-neutral-100);
+}
+
+.butia-btn--light {
+  background-color: var(--color-neutral-100);
+  color: var(--color-text-primary);
+  border: 1px solid var(--color-neutral-100);
+}
+
+.butia-btn--light:hover {
+  background-color: var(--color-butia-yellow);
+  border-color: var(--color-butia-yellow);
+  color: var(--color-text-primary);
+}
+
+.butia-btn .butia-btn-arrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform var(--duration-btn) var(--ease-editorial);
+}
+
+.butia-btn:hover .butia-btn-arrow {
+  transform: translateX(3px);
+}
+
+.butia-btn:active {
+  transform: scale(0.98);
+}
+
+/* 2. Circular Icon Button (44px, restrained near-black stroke) */
+.butia-icon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-pill);
+  border: 1px solid rgba(17, 17, 17, 0.22);
+  background-color: transparent;
+  color: var(--color-text-primary);
+  cursor: pointer;
+  flex-shrink: 0;
+  transition:
+    background-color var(--duration-btn) var(--ease-editorial),
+    border-color var(--duration-btn) var(--ease-editorial),
+    color var(--duration-btn) var(--ease-editorial),
+    transform 200ms ease;
+}
+
+.butia-icon-btn:hover:not(:disabled) {
+  background-color: var(--color-text-primary);
+  border-color: var(--color-text-primary);
+  color: var(--color-neutral-100);
+}
+
+.butia-icon-btn:active:not(:disabled) {
+  transform: scale(0.96);
+}
+
+.butia-icon-btn:disabled {
+  opacity: 0.28;
+  cursor: not-allowed;
+}
+
+.butia-icon-btn--on-dark {
+  border-color: rgba(255, 255, 255, 0.45);
+  color: var(--color-neutral-100);
+}
+
+.butia-icon-btn--on-dark:hover:not(:disabled) {
+  background-color: var(--color-neutral-100);
+  border-color: var(--color-neutral-100);
+  color: var(--color-text-primary);
+}
+
+/* 3. EXACT REFERENCE CARD HOVER (Section 12)
+   - Outer colored container stays stable (subtle -4px vertical shift only, NO expansion/rotation)
+   - Inner rounded photograph smoothly contracts ~10% (scale(1) -> scale(0.90), matching 341x330 -> 308x298)
+     centered inside its available area against the solid card background
+   - Black pill Explore button animates arrow from AFTER label ("Explorar ->") to BEFORE label ("-> Explorar")
+   - Transition: 500ms cubic-bezier(0.22, 1, 0.36, 1) */
+.butia-ref-card {
+  border-radius: var(--radius-card);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transform: translate3d(0, 0, 0);
+  transition: transform var(--duration-card) var(--ease-editorial);
+  will-change: transform;
+}
+
+@media (min-width: 768px) {
+  .butia-ref-card {
+    padding: 28px;
+  }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .butia-ref-card:hover {
+    transform: translate3d(0, -4px, 0);
+  }
+}
+
+.butia-ref-card__media-slot {
+  width: 100%;
+  aspect-ratio: 341 / 330;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 18px;
+}
+
+.butia-ref-card__media-frame {
+  width: 100%;
+  height: 100%;
+  border-radius: 18px;
+  overflow: hidden;
+  transform: scale(1);
+  transform-origin: center center;
+  transition: transform var(--duration-card) var(--ease-editorial);
+  will-change: transform;
+}
+
+.butia-ref-card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 22%;
+  display: block;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .butia-ref-card:hover .butia-ref-card__media-frame {
+    transform: scale(0.90);
+  }
+}
+
+/* Reference Explore Pill Button with Arrow Repositioning (Right -> Left on Hover) */
+.butia-explore-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 36px;
+  padding: 0 15px;
+  border-radius: var(--radius-pill);
+  background-color: #111111;
+  color: #FFFFFF;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 13.5px;
+  line-height: 1;
+  white-space: nowrap;
+  flex-shrink: 0;
+  overflow: hidden;
+  transition:
+    background-color 320ms var(--ease-editorial),
+    color 320ms var(--ease-editorial);
+}
+
+.butia-explore-pill--light {
+  background-color: #FFFFFF;
+  color: #111111;
+}
+
+.butia-explore-pill__arrow-left {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 0;
+  margin-right: 0;
+  opacity: 0;
+  transform: translateX(-8px);
+  overflow: hidden;
+  transition:
+    width var(--duration-card) var(--ease-editorial),
+    margin-right var(--duration-card) var(--ease-editorial),
+    opacity var(--duration-card) var(--ease-editorial),
+    transform var(--duration-card) var(--ease-editorial);
+}
+
+.butia-explore-pill__arrow-right {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 15px;
+  margin-left: 6px;
+  opacity: 1;
+  transform: translateX(0);
+  overflow: hidden;
+  transition:
+    width var(--duration-card) var(--ease-editorial),
+    margin-left var(--duration-card) var(--ease-editorial),
+    opacity var(--duration-card) var(--ease-editorial),
+    transform var(--duration-card) var(--ease-editorial);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .butia-ref-card:hover .butia-explore-pill__arrow-left,
+  .butia-explore-pill:hover .butia-explore-pill__arrow-left {
+    width: 15px;
+    margin-right: 6px;
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .butia-ref-card:hover .butia-explore-pill__arrow-right,
+  .butia-explore-pill:hover .butia-explore-pill__arrow-right {
+    width: 0;
+    margin-left: 0;
+    opacity: 0;
+    transform: translateX(8px);
+  }
+}
+
+/* Supporting Editorial Image Hover (subtle contraction inside static frame) */
+.hover-media-card .hover-media-frame {
+  overflow: hidden;
+  border-radius: 18px;
+}
+
+.hover-media-card .hover-media-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 22%;
+  transform: scale(1);
+  transition: transform var(--duration-card) var(--ease-editorial);
+  will-change: transform;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .hover-media-card:hover .hover-media-img {
+    transform: scale(0.94);
+  }
+}
+
+/* 4. Smooth Accordion Expansion */
+.accordion-panel {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 360ms var(--ease-editorial);
+}
+
+.accordion-panel[data-open="true"] {
+  grid-template-rows: 1fr;
+}
+
+.accordion-panel-inner {
+  overflow: hidden;
+}
+
+/* 5. Overlapping Rounded Section Panels (clean chromatic contrast, zero shadow) */
+.stacked-panel-surface {
+  border-top-left-radius: var(--radius-panel-sm);
+  border-top-right-radius: var(--radius-panel-sm);
+  box-shadow: none;
+}
+
+@media (min-width: 768px) {
+  .stacked-panel-surface {
+    border-top-left-radius: var(--radius-panel);
+    border-top-right-radius: var(--radius-panel);
+  }
+}
+
+@media (min-width: 1024px) {
+  .stacked-panel-surface {
+    border-top-left-radius: var(--radius-panel-lg);
+    border-top-right-radius: var(--radius-panel-lg);
+  }
+}
+
+/* 6. Reveal Utility */
+.reveal-up {
+  opacity: 0;
+  transform: translateY(18px);
+  transition:
+    opacity 540ms var(--ease-editorial),
+    transform 540ms var(--ease-editorial);
+}
+
+.reveal-up.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 7. Reduced Motion Respect */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .reveal-up {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
+  .butia-btn,
+  .butia-btn .butia-btn-arrow,
+  .butia-icon-btn,
+  .butia-ref-card,
+  .butia-ref-card__media-frame,
+  .butia-explore-pill__arrow-left,
+  .butia-explore-pill__arrow-right,
+  .hover-media-card .hover-media-img,
+  .accordion-panel {
+    transition: none !important;
+    transform: none !important;
+  }
+}
